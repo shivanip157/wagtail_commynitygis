@@ -15,7 +15,8 @@ import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')  
+WAGTAIL_SITE_NAME = 'My-Nutrition-Site'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -27,7 +28,8 @@ INSTALLED_APPS = [
     'home',
     'search',
     'blog',
-    
+    'wagtailmd',
+
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -39,10 +41,10 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
-
+    "wagtail.contrib.routable_page",
     'modelcluster',
     'taggit',
-
+    'wagtail.contrib.modeladmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -85,7 +87,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wagtail_tuto.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
